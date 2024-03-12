@@ -1,0 +1,21 @@
+<div class="post-form fade-in">
+    <div class="post-form__close-box">
+        <button (click)="onModalClose()" class="post-form__close-btn">
+            <img src="../../../../../assets/icons/x.svg" alt="" class="post-form__btn-icon">
+        </button>
+    </div>
+    <form [formGroup]="form" class="form form--padding">
+        <div class="form__input-box">
+            <input formControlName="title" type="text" class="form__input" placeholder="Title">
+            <p *ngIf="title?.touched && title?.errors?.['required']" class="form__error-message">Title required.</p>
+        </div>
+        <div class="form__input-box">
+            <textarea formControlName="content"  class="form__input" rows="10" placeholder="Write something..."></textarea>
+            <p *ngIf="content?.touched && content?.errors?.['required']" class="form__error-message">Content required.</p>
+        </div>
+        <div class="post-form__input-box">
+            <input formControlName="url" class="form__input" type="email" placeholder="URL">
+        </div>
+        <button class="btn" (click)="onPost()">{{ btnText }}</button>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+.posts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+app-create-post, app-post-form-popup, app-post {
+    max-width: 500px;
+    width: 100%;
+}

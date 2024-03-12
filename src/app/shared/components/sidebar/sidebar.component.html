@@ -1,0 +1,5 @@
+<nav class="sidebar fade-in">
+    <ul class="sidebar__items-list">
+        <li [routerLink]="[item[0].toLowerCase() + item.slice(1)]" *ngFor="let item of items" class="sidebar__item"> {{ item }}</li>
+    </ul>
+</nav>

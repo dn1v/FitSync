@@ -1,0 +1,29 @@
+.post-form {
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.form--padding {
+    padding-top: 40px;
+}
+
+.post-form__close-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #333;
+    position: absolute;
+    background-color: transparent;
+    right: 3px;
+    top: 3px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s ease background;
+}
+
+.post-form__close-btn:hover {
+    background-color: #2ecc71;
+    border: transparent;
+}

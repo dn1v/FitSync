@@ -1,0 +1,236 @@
+/* .post {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #333;
+    position: relative;
+}
+
+.post__more-btn {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    padding: 3px;
+}
+
+.post__more-options {
+    border: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    max-width: 70px;
+    position: absolute;
+    top: 20px;
+    right: 3px;
+}
+
+.post__more-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .post__more-options {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  } */
+
+  /* .post__more-options button {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .post__more-options button:hover {
+    background-color: #ddd;
+  } */
+
+  .post {
+    position: relative;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .post__more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid #333;
+  }
+
+  .post__more-btn {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding: 3px;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: 1px solid #333;
+    transition: 0.2s ease background;
+  }
+
+  .post__more-btn:hover {
+    background-color: #2ecc71;
+    border: transparent;
+}
+
+  .post__more-options {
+    /* display: none; */
+    position: absolute;
+    top: 35px;
+    right: 5px;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  .post__more-options button {
+    display: block;
+    width: 100%;
+    padding: 8px 10px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  .post__more-options button:hover {
+    background-color: #ddd;
+  }
+
+
+  /* .post {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .post__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .post__more-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .post__more-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .post__more-options {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .post__more-options button {
+    display: block;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .post__more-options button:hover {
+    background-color: #f2f2f2;
+  }
+
+  .post__content {
+    margin-top: 15px;
+    line-height: 1.6;
+  }
+
+  .post__author {
+    margin-top: 10px;
+    font-style: italic;
+  } */
+  /* .post {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+
+  .post__title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .post__more-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .post__more-btn:hover {
+    background-color: #0056b3;
+  }
+
+  .post__more-options {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .post__more-options button {
+    background-color: transparent;
+    color: #333333;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .post__more-options button:hover {
+    background-color: #f2f2f2;
+  }
+
+  .post__content {
+    margin-top: 15px;
+    line-height: 1.6;
+  }
+
+  .post__author {
+    margin-top: 10px;
+    font-style: italic;
+  } */

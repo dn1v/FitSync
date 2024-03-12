@@ -1,0 +1,24 @@
+<section class="signup" *ngIf="!spinnerActive">
+    <div class="container">
+        <div class="signup__content">
+
+            <div *ngIf="!athleteRole && !coachRole" class="signup__role-box fade-in">
+                <p class="signup__role-choice-text">Are you:</p>
+                <button (click)="onAthleteRole()" class="signup__role-btn btn">
+                    Athlete
+                </button>
+                <button (click)="onCoachRole()" class="signup__role-btn btn">
+                    Coach
+                </button>
+            </div>
+
+            <app-athlete-signup (signup)="onSignupEvent()" (err)="onErrEvent()" (success)="onSuccessEvent()" *ngIf="athleteRole"></app-athlete-signup>
+
+            <app-coach-signup (signup)="onSignupEvent()"  (err)="onErrEvent()" (success)="onSuccessEvent()" *ngIf="coachRole"></app-coach-signup>
+
+            <button *ngIf="athleteRole || coachRole" (click)="onChangeRole()" class="signup__change-role-btn btn">Change role</button>
+
+        </div>
+    </div>
+</section>
+<app-loading-spinner *ngIf="spinnerActive"></app-loading-spinner>

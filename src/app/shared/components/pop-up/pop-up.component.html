@@ -1,0 +1,8 @@
+<div class="pop-up fade-in">
+    <h2 class="pop-up__heading">Error {{ errorResponse?.status }}</h2>
+    <p class="pop-up__message">{{ errorResponse?.message }}</p>
+    <p class="pop-up__message">Reason: {{ errorResponse?.data?.reason }}</p>
+    <a (click)="onClick()">
+       x <!-- <ion-icon  class="close-icon" name="close-circle-sharp"></ion-icon> -->
+    </a>
+</div>

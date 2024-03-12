@@ -1,0 +1,7 @@
+<section class="posts">
+    <app-create-post (createPost)="onCreatePost()"></app-create-post>
+    <app-post *ngFor="let post of posts" [post]="post" (deleteEvent)="onDeleteEvent()" (editEvent)="onEditEvent()"></app-post>
+    <div *ngIf="modalOpen" class="overlay">
+        <app-post-form-popup (postSub)="onPostSub()" (modalClosed)="onModalClosed()"></app-post-form-popup>
+    </div>
+</section>

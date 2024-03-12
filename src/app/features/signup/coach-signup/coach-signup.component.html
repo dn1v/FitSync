@@ -1,0 +1,34 @@
+<div class="athlete-signup fade-in">
+    <form [formGroup]="form" class="form">
+        <div class="form__input-box">
+            <input formControlName="firstName" type="text" class="form__input" placeholder="First Name">
+            <p *ngIf="firstName?.touched && firstName?.errors?.['required']" class="form__error-message">First name required.</p>
+        </div>
+        <div class="form__input-box">
+            <input formControlName="lastName" type="text" class="form__input" placeholder="Last Name">
+            <p *ngIf="lastName?.touched && lastName?.errors?.['required']" class="form__error-message">Last name required.</p>
+        </div>
+        <div class="form__input-box">
+            <input formControlName="email" class="form__input" type="email" placeholder="Email">
+            <p *ngIf="email?.touched && email?.errors?.['required']" class="form__error-message">Email required.</p>
+            <p *ngIf="email?.touched && email?.errors?.['email']" class="form__error-message">Invalid email.</p>
+        </div>
+        <div class="form__input-box">
+            <input formControlName="position" class="form__input" type="text" placeholder="Position">
+            <p *ngIf="position?.touched && position?.errors?.['required']" class="form__error-message">Position required.</p>
+        </div>
+        <div class="form__input-box">
+            <input formControlName="password" class="form__input" type="password" placeholder="Password">
+            <p *ngIf="password?.touched && password?.errors?.['required']" class="form__error-message">Password required.</p>
+        </div>
+        <div class="form__input-box">
+            <input formControlName="confirmPassword" class="form__input" type="password" placeholder="Confirm password">
+            <p *ngIf="confirmPassword?.touched && confirmPassword?.errors?.['required']" class="form__error-message">Password required.</p>
+            <p *ngIf="confirmPassword?.touched && form?.errors?.['notSame']" class="form__error-message">Passwords are not matching.</p>
+        </div>
+        <button class="btn" (click)="onSignup()">Signup</button>
+        <span class="form__redirect">Already signed up?
+            <a [routerLink]="['/login']" class="form__redirect" >Go to login</a>
+        </span>
+    </form>
+</div>
