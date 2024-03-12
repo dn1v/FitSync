@@ -26,6 +26,8 @@ import { SidebarComponent } from './shared/components/sidebar/sidebar.component'
 import { RequestsComponent } from './features/network/requests/requests.component';
 import { ConnectionsComponent } from './features/network/connections/connections.component';
 import { GroupsComponent } from './features/network/groups/groups.component';
+import { RequestFormComponent } from './features/network/requests/request-form/request-form.component';
+import { RequestComponent } from './features/network/requests/request/request.component';
 
 @NgModule({
     declarations: [
@@ -47,7 +49,9 @@ import { GroupsComponent } from './features/network/groups/groups.component';
         SidebarComponent,
         RequestsComponent,
         ConnectionsComponent,
-        GroupsComponent
+        GroupsComponent,
+        RequestFormComponent,
+        RequestComponent
     ],
     imports: [
         HttpClientModule,
