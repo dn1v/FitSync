@@ -1,1 +1,9 @@
-<p>request-form works!</p>
+<form [formGroup]="form" class="connection-request-form fade-in">
+    <div class="form-group">
+         <label for="email">Email Address:</label>
+        <input formControlName="email" type="email" id="email" name="email" class="form-control">
+        <p *ngIf="email?.touched && email?.errors?.['required']" class="form__error-message fade-in">Email required.</p>
+        <p *ngIf="email?.touched && email?.errors?.['email']" class="form__error-message fade-in">Invalid email.</p>
+    </div>
+    <button (click)="onSendRequest()" [disabled]="form.invalid" type="submit" class="btn btn-primary">Send Request</button>
+</form>

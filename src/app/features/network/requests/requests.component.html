@@ -1,11 +1,2 @@
 
-<form [formGroup]="form" class="connection-request-form">
-    <div class="form-group">
-         <label for="email">Email Address:</label>
-        <input formControlName="email" type="email" id="email" name="email" class="form-control">
-        <p *ngIf="email?.touched && email?.errors?.['required']" class="form__error-message fade-in">Email required.</p>
-        <p *ngIf="email?.touched && email?.errors?.['email']" class="form__error-message fade-in">Invalid email.</p>
-    </div>
-    <button (click)="onSendRequest()" type="submit" class="btn btn-primary">Send Request</button>
-</form>
-
+<app-request-form></app-request-form>
