@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { ResponseMessage } from 'src/models/deleteMessage.model';
+import { UserRequest } from 'src/models/requests.model';
 
 @Injectable({
     providedIn: 'root'
@@ -13,6 +14,8 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     sendConnectionRequest(email: string): Observable<ResponseMessage> {
-        return this.http.post(`${this.BASE_URL}/me/connections`, email).pipe(map((data: any) => data && data.message && new ResponseMessage(data)))
+        return this.http.post(`${this.BASE_URL}/me/connections`, email).pipe(
+            map((data: any) => data && new ResponseMessage(data))
+        )
     }
 }

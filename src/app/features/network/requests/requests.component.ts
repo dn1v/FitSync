@@ -8,19 +8,18 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RequestsComponent implements OnInit {
 
-    form: FormGroup = new FormGroup({
-        email: new FormControl('', [Validators.required, Validators.email])
-    })
+    sent: boolean = true
 
     constructor() { }
 
     ngOnInit() { }
 
-    onSendRequest(): void {
-        console.log(this.email?.value)
+    onSent(): void {
+        this.sent = true
     }
 
-    get email() {
-        return this.form.get('email')
+    onReceived(): void {
+        this.sent = false
     }
+
 }

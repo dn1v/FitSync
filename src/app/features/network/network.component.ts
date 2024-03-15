@@ -14,7 +14,6 @@ export class NetworkComponent implements OnInit {
 
     ngOnInit(): void {
         console.log('ngOnInit!!!')
-
         this.router.navigate(['network', 'requests'])
 
     }

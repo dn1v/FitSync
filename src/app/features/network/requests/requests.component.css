@@ -1,0 +1,28 @@
+.requests {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.requests__request-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.requests__request-form-box, .requests__request-box {
+    width: 50%;
+}
+
+.btn-box {
+    display: flex;
+    gap: 20px;
+}
+
+.btn-box button {
+    min-width: 100px;
+    border-radius: 777px;
+    background-color: #ecf0f1;
+
+}
+

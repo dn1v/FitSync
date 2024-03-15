@@ -1,2 +1,31 @@
 
-<app-request-form></app-request-form>
+<section class="requests">
+    <div class="requests__request-form-box">
+        <app-request-form></app-request-form>
+    </div>
+    <div class="requests__request-box">
+        <div class="btn-box">
+            <button (click)="onSent()" [ngClass]="{'active': sent }" class="btn btn--sent">Sent</button>
+            <button (click)="onReceived()" [ngClass]="{'active': !sent }" class="btn ">Received</button>
+        </div>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+        <app-request></app-request>
+    </div>
+</section>

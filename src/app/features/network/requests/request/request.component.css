@@ -1,0 +1,109 @@
+/* request.component.css */
+/* .request-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .request-info {
+    margin-bottom: 10px;
+  }
+
+  .name {
+    font-weight: bold;
+  }
+
+  .role {
+    color: #666;
+  }
+
+  .actions button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .accept-btn {
+    background-color: #5cb85c;
+    color: white;
+  }
+
+  .decline-btn {
+    background-color: #d9534f;
+    color: white;
+  } */
+/* request.component.css */
+.request-card {
+    /* margin: 0 auto; Center the card horizontally */
+    margin: 10px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* max-width: 400px; Limit the maximum width of the card */
+}
+
+.btn--accept {
+    background-color: #85f3b3;
+    border-radius: 777px;
+    font-weight: 200;
+}
+
+.btn--decline {
+    background-color: #f9f9f9;
+    border: 2px solid #333;
+    border-radius: 777px;
+    font-weight: 200;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.request-card__info {
+
+    display: flex;
+    gap: 30px
+}
+
+.name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: #666;
+}
+
+.request-card__actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Space out the buttons evenly */
+}
+
+.request-card__accept-btn, .request-card__decline-btn {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 777px;
+    cursor: pointer;
+}
+
+.request-card__accept-btn {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.request-card__decline-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn--decline:hover {
+    /* opacity: 0.8; Reduce opacity on hover for visual feedback */
+    background-color: #e74c3c;
+    color: #fff;
+}
