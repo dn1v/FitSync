@@ -28,6 +28,7 @@ import { ConnectionsComponent } from './features/network/connections/connections
 import { GroupsComponent } from './features/network/groups/groups.component';
 import { RequestFormComponent } from './features/network/requests/request-form/request-form.component';
 import { RequestComponent } from './features/network/requests/request/request.component';
+import { RequestPopupComponent } from './features/network/requests/request-popup/request-popup.component';
 
 @NgModule({
     declarations: [
@@ -51,7 +52,8 @@ import { RequestComponent } from './features/network/requests/request/request.co
         ConnectionsComponent,
         GroupsComponent,
         RequestFormComponent,
-        RequestComponent
+        RequestComponent,
+        RequestPopupComponent
     ],
     imports: [
         HttpClientModule,

@@ -7,3 +7,4 @@
     </div>
     <button (click)="onSendRequest()" [disabled]="form.invalid" type="submit" class="btn btn-primary">Send Request</button>
 </form>
+<app-request-popup *ngIf="requestMessagePopUp" (closeEvent)="onCloseEvent()" [message]="requestMessage"></app-request-popup>

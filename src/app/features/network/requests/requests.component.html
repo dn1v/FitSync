@@ -8,24 +8,12 @@
             <button (click)="onSent()" [ngClass]="{'active': sent }" class="btn btn--sent">Sent</button>
             <button (click)="onReceived()" [ngClass]="{'active': !sent }" class="btn ">Received</button>
         </div>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
-        <app-request></app-request>
+        <!-- <div *ngIf="sent" class="requests__sent">
+            <app-request *ngFor="let user of sentRequests" [user]="user"></app-request>
+        </div>
+        <div  *ngIf="!sent" class="requests__received">
+            <app-request *ngFor="let user of receivedRequests" [user]="user"></app-request>
+        </div> -->
+        <app-request *ngFor="let user of requests" [sent]="sent" [user]="user"></app-request>
     </div>
 </section>
