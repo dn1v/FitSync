@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
     selector: 'app-sidebar',
@@ -8,21 +8,15 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
     @Input() items: string[] = [];
-     activeItem: string = 'requests';
+    @Input() activeItem: string = '';
 
-    constructor(private cdr: ChangeDetectorRef) {
-        this.isActive(this.activeItem)
-    }
+    constructor() { }
 
     ngOnInit(): void {
-        this.cdr.detectChanges()
+        this.activeItem = this.activeItem.toLowerCase()
     }
 
     onActiveItem(item: string): void {
         this.activeItem = item.toLowerCase()
-    }
-
-    isActive(item: string): boolean {
-        return this.activeItem === item
     }
 }

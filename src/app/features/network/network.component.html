@@ -1,9 +1,8 @@
 <section class="network fade-in">
     <div class="container">
-        <app-sidebar [items]="sidebarItems"></app-sidebar>
+        <app-sidebar [activeItem]="activeItem" [items]="sidebarItems"></app-sidebar>
         <div class="margin-left padding-top">
             <router-outlet class="fade-in"></router-outlet>
         </div>
     </div>
 </section>
-//[activeItem]="activeItem" 
