@@ -4,8 +4,8 @@
         <div class="role"> {{ user.role }}</div>
     </div>
     <div class="request-card__actions">
-        <button *ngIf="!sent" class="btn btn--accept">Accept</button>
+        <button (click)="onAccept()" *ngIf="!sent" class="btn btn--accept">Accept</button>
         <button *ngIf="!sent" class="btn btn--decline">Decline</button>
-        <button *ngIf="sent" class="btn btn--decline">Withdraw</button>
+        <button (click)="onWithdraw()" *ngIf="sent" class="btn btn--decline">Withdraw</button>
     </div>
 </div>

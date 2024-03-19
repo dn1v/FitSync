@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map, throwError, catchError } from 'rxjs';
 import { ResponseMessage } from 'src/models/deleteMessage.model';
 import { UserRequest } from 'src/models/requests.model';
-// import { HttpErrorResponse } from '@angular/common/http';
+
 @Injectable({
     providedIn: 'root'
 })
@@ -21,25 +21,30 @@ export class UserService {
     }
 
     getSentRequests(): Observable<UserRequest[]> {
-        // return this.http.get(`${this.BASE_URL}/me/connections/sent`).pipe(
-        //     map((data: any) => data && data.requests && data.requests.map((data: any) => new UserRequest(data))),
-        //     catchError((err) => this.handleError(err))
-        // )
         return this.getRequests(`${this.BASE_URL}/me/connections/sent`)
     }
 
     getReceivedRequests(): Observable<UserRequest[]> {
-        // return this.http.get(`${this.BASE_URL}/me/connections/received`).pipe(
-        //     map((data: any) => data && data.requests && data.requests.map((data: any) => new UserRequest(data))),
-        //     catchError((err) => this.handleError(err))
-        // )
         return this.getRequests(`${this.BASE_URL}/me/connections/received`)
 
     }
 
-    private getRequests(endpoint: string) {
-        return this.http.get(endpoint).pipe(
-            map((data: any) => data && data.requests && data.requests.map((data: any) => new UserRequest(data))),
+    withdrawConnectionRequest(id: string): Observable<ResponseMessage> {
+        return this.http.delete(`${this.BASE_URL}/me/connections/${id}`).pipe(
+            map((data: any) => data && new ResponseMessage(data)),
+            catchError((err) => this.handleError(err)))
+    }
+
+    acceptConnectionRequest(id: string): Observable<ResponseMessage> {
+        return this.http.post(`${this.BASE_URL}/me/connections/accept/${id}`, {}).pipe(
+            map((data: any) => data && new ResponseMessage(data)),
+            catchError((err) => this.handleError(err))
+        )
+    }
+
+    declineConnectionRequest(id: string): Observable<ResponseMessage> {
+        return this.http.delete(`${this.BASE_URL}/me/connections/decline/${id}`).pipe(
+            map((data: any) => data && new ResponseMessage(data)),
             catchError((err) => this.handleError(err))
         )
     }
@@ -47,5 +52,18 @@ export class UserService {
     private handleError(errRes: HttpErrorResponse) {
         return throwError(() => errRes)
     }
+
+    private ADWrequests(id: string, endpoint: string): Observable<ResponseMessage> {
+        return this.http.post(endpoint, {}).pipe(
+            map((data: any) => data && new ResponseMessage(data)),
+            catchError((err) => this.handleError(err))
+        )
+    }
+
+    private getRequests(endpoint: string): Observable<UserRequest[]> {
+        return this.http.get(endpoint).pipe(
+            map((data: any) => data && data.requests && data.requests.map((data: any) => new UserRequest(data))),
+            catchError((err) => this.handleError(err))
+        )
+    }
 }
-// `${this.BASE_URL}/me/connections/received`
