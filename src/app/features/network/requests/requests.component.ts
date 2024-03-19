@@ -19,8 +19,10 @@ export class RequestsComponent implements OnInit {
     responseMessage: ResponseMessage = new ResponseMessage()
     popUp: boolean = false
 
-
-    constructor(private userService: UserService, private sharedService: SharedService) { }
+    constructor(
+        private userService: UserService,
+        private sharedService: SharedService
+    ) { }
 
     ngOnInit() {
         this.onSent()

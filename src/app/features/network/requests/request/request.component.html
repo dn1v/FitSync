@@ -5,7 +5,7 @@
     </div>
     <div class="request-card__actions">
         <button (click)="onAccept()" *ngIf="!sent" class="btn btn--accept">Accept</button>
-        <button *ngIf="!sent" class="btn btn--decline">Decline</button>
+        <button (click)="onDecline()" *ngIf="!sent" class="btn btn--decline">Decline</button>
         <button (click)="onWithdraw()" *ngIf="sent" class="btn btn--decline">Withdraw</button>
     </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-network',
@@ -9,12 +9,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class NetworkComponent implements OnInit {
 
     sidebarItems: string[] = ['Connections', 'Groups', 'Requests']
+    activeItem: string = 'requests'
 
-    constructor(private router: Router, private route: ActivatedRoute) { }
+    constructor(private router: Router) { }
 
     ngOnInit(): void {
-        console.log('ngOnInit!!!')
-        this.router.navigate(['network', 'requests'])
-
+        this.router.navigate(['network', this.activeItem])
     }
 }

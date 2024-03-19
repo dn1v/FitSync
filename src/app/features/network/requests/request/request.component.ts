@@ -6,9 +6,9 @@ import { ResponseMessage } from 'src/models/deleteMessage.model';
 import { UserRequest } from 'src/models/requests.model';
 
 @Component({
-  selector: 'app-request',
-  templateUrl: './request.component.html',
-  styleUrls: ['./request.component.css']
+    selector: 'app-request',
+    templateUrl: './request.component.html',
+    styleUrls: ['./request.component.css']
 })
 export class RequestComponent implements OnInit {
 
@@ -16,7 +16,10 @@ export class RequestComponent implements OnInit {
     @Input() sent: boolean = true
     @Output() requestEvent: EventEmitter<void> = new EventEmitter()
 
-    constructor(private userService: UserService, private sharedService: SharedService, private authService: AuthService) {}
+    constructor(
+        private userService: UserService,
+        private sharedService: SharedService,
+    ) { }
 
     ngOnInit(): void {
 
@@ -30,17 +33,15 @@ export class RequestComponent implements OnInit {
     }
 
     onDecline(): void {
-
+        this.userService.declineConnectionRequest(this.user._id).subscribe({
+            next: this.resMsg.bind(this),
+            error: (err: any) => console.log(err)
+        })
     }
 
     onWithdraw(): void {
         this.userService.withdrawConnectionRequest(this.user._id).subscribe({
-            next: (data: ResponseMessage) => {
-                console.log(data)
-                this.sharedService.setResponseMessage(data)
-                this.requestEvent.emit()
-            },
-            // next: this.resMsg,
+            next: this.resMsg.bind(this),
             error: (err: any) => console.log(err)
         })
     }

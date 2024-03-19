@@ -1,5 +1,15 @@
 <nav class="sidebar fade-in">
     <ul class="sidebar__items-list">
-        <li [routerLink]="[item[0].toLowerCase() + item.slice(1)]" *ngFor="let item of items" class="sidebar__item"> {{ item }}</li>
+        <li
+            [routerLink]="[item.toLowerCase()]"
+            routerLinkActive="{{ activeItem }}"
+            (click)="onActiveItem(item)"
+            *ngFor="let item of items"
+            [class.active-item]="activeItem === item.toLowerCase()"
+            class="sidebar__item fade-in"
+        >
+            {{ item }}
+        </li>
     </ul>
 </nav>
+<!--  -->
