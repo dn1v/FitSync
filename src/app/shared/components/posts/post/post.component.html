@@ -1,6 +1,6 @@
 <div class="post">
     <h3 class="post__title">{{ post.title }}</h3>
-    <button (click)="onMore()" class="post__more-btn"><img src="../../../../../assets/icons/more-horizontal.svg" alt="Three horizontal dots."></button>
+    <button *ngIf="myPost" (click)="onMore()" class="post__more-btn"><img src="../../../../../assets/icons/more-horizontal.svg" alt="Three horizontal dots."></button>
     <div *ngIf="options" class="post__more-options">
         <button (click)="onDelete()" class="post__delete">Delete</button>
         <button (click)="onEdit()" (click)="onOption()" class="post__edit">Edit</button>

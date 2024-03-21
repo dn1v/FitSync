@@ -2,12 +2,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { UserService } from 'src/app/core/services/user/user.service';
 import { ResponseMessage } from 'src/models/deleteMessage.model';
-import { UserRequest } from 'src/models/requests.model';
+import { UserConnection } from 'src/models/requests.model';
 
 @Component({
-  selector: 'app-request-form',
-  templateUrl: './request-form.component.html',
-  styleUrls: ['./request-form.component.css']
+    selector: 'app-request-form',
+    templateUrl: './request-form.component.html',
+    styleUrls: ['./request-form.component.css']
 })
 export class RequestFormComponent implements OnInit {
 
@@ -24,7 +24,7 @@ export class RequestFormComponent implements OnInit {
     ngOnInit() { }
 
     onSendRequest(): void {
-        console.log("Look here:", )
+        console.log("Look here:",)
         this.userService.sendConnectionRequest(this.form.value).subscribe({
             next: (res: ResponseMessage) => {
                 this.requestMessage = res.message

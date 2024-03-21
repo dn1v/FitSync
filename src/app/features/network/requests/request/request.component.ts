@@ -3,7 +3,7 @@ import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { SharedService } from 'src/app/core/services/shared/shared.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 import { ResponseMessage } from 'src/models/deleteMessage.model';
-import { UserRequest } from 'src/models/requests.model';
+import { UserConnection } from 'src/models/requests.model';
 
 @Component({
     selector: 'app-request',
@@ -12,7 +12,7 @@ import { UserRequest } from 'src/models/requests.model';
 })
 export class RequestComponent implements OnInit {
 
-    @Input() user: UserRequest = new UserRequest()
+    @Input() user: UserConnection = new UserConnection()
     @Input() sent: boolean = true
     @Output() requestEvent: EventEmitter<void> = new EventEmitter()
 

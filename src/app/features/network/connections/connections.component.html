@@ -1,1 +1,13 @@
-<p>connections works!</p>
+<section class="connections fade-in">
+    <p *ngIf="users.length === 0">No connections found.</p>
+    <app-request-popup
+        *ngIf="popUp"
+        (closeEvent)="onPopUpCloseEvent()"
+        [shared]="sharedService"
+    ></app-request-popup>
+    <app-connection
+        (removeEvent)="onRemoveEvent()"
+        *ngFor="let user of users"
+        [user]="user"
+    ></app-connection>
+</section>

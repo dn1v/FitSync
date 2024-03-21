@@ -1,0 +1,16 @@
+<div class="request-card">
+    <div class="request-card__info">
+      <div class="name">
+        <span>First Name:</span> {{ user.firstName }}
+      </div>
+      <div class="name">
+        <span>Last Name:</span> {{ user.lastName }}
+      </div>
+      <div class="role">
+        <span>Role:</span> {{ user.role }}
+      </div>
+    </div>
+    <div class="request-card__actions">
+      <button (click)="onRemove()" class="request-card__decline-btn btn--decline">Remove</button>
+    </div>
+  </div>

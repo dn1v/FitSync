@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SharedService } from 'src/app/core/services/shared/shared.service';
 import { UserService } from 'src/app/core/services/user/user.service';
 import { ResponseMessage } from 'src/models/deleteMessage.model';
-import { UserRequest } from 'src/models/requests.model';
+import { UserConnection } from 'src/models/requests.model';
 
 @Component({
     selector: 'app-requests',
@@ -13,9 +13,9 @@ import { UserRequest } from 'src/models/requests.model';
 export class RequestsComponent implements OnInit {
 
     sent: boolean = true
-    requests: UserRequest[] = []
-    sentRequests: UserRequest[] = []
-    receivedRequests: UserRequest[] = []
+    requests: UserConnection[] = []
+    sentRequests: UserConnection[] = []
+    receivedRequests: UserConnection[] = []
     responseMessage: ResponseMessage = new ResponseMessage()
     popUp: boolean = false
 
@@ -32,7 +32,7 @@ export class RequestsComponent implements OnInit {
 
     onSent(): void {
         this.userService.getSentRequests().subscribe({
-            next: (reqs: UserRequest[]) => {
+            next: (reqs: UserConnection[]) => {
                 this.sent = true
                 this.requests = reqs
 
@@ -42,7 +42,7 @@ export class RequestsComponent implements OnInit {
         })
     }
 
-    private nextReqs(sentReqs: UserRequest[], sent: boolean): void {
+    private nextReqs(sentReqs: UserConnection[], sent: boolean): void {
         this.sent = sent
         this.requests = sentReqs
         console.log(this.requests)
@@ -50,7 +50,7 @@ export class RequestsComponent implements OnInit {
 
     onReceived(): void {
         this.userService.getReceivedRequests().subscribe({
-            next: (reqs: UserRequest[]) => {
+            next: (reqs: UserConnection[]) => {
                 this.sent = false
                 this.requests = reqs
                 console.log(this.requests)

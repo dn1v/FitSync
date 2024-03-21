@@ -13,7 +13,7 @@ export class CreatePostComponent implements OnInit {
     constructor(private sharedService: SharedService) {}
 
     ngOnInit(): void {
-
+    
     }
 
     onCreate(): void {

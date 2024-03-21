@@ -2,7 +2,7 @@ export class UserRequests {
 
 }
 
-export class UserRequest {
+export class UserConnection {
     _id: string;
     firstName: string;
     lastName: string;

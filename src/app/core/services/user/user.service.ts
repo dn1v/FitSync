@@ -2,7 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, map, throwError, catchError } from 'rxjs';
 import { ResponseMessage } from 'src/models/deleteMessage.model';
-import { UserRequest } from 'src/models/requests.model';
+import { UserConnection } from 'src/models/requests.model';
 
 @Injectable({
     providedIn: 'root'
@@ -20,11 +20,11 @@ export class UserService {
         )
     }
 
-    getSentRequests(): Observable<UserRequest[]> {
+    getSentRequests(): Observable<UserConnection[]> {
         return this.getRequests(`${this.BASE_URL}/me/connections/sent`)
     }
 
-    getReceivedRequests(): Observable<UserRequest[]> {
+    getReceivedRequests(): Observable<UserConnection[]> {
         return this.getRequests(`${this.BASE_URL}/me/connections/received`)
 
     }
@@ -49,20 +49,27 @@ export class UserService {
         )
     }
 
-    private handleError(errRes: HttpErrorResponse) {
-        return throwError(() => errRes)
+    getConnections(): Observable<UserConnection[]> {
+        return this.http.get(`${this.BASE_URL}/me/connections`).pipe(
+            map((data: any) => data && data.users && data.users.map((user: any) => new UserConnection(user))),
+            catchError((err) => this.handleError(err))
+        )
     }
 
-    private ADWrequests(id: string, endpoint: string): Observable<ResponseMessage> {
-        return this.http.post(endpoint, {}).pipe(
+    removeConnection(id: string): Observable<ResponseMessage> {
+        return this.http.delete(`${this.BASE_URL}/me/connections/remove/${id}`).pipe(
             map((data: any) => data && new ResponseMessage(data)),
             catchError((err) => this.handleError(err))
         )
     }
 
-    private getRequests(endpoint: string): Observable<UserRequest[]> {
+    private handleError(errRes: HttpErrorResponse) {
+        return throwError(() => errRes)
+    }
+
+    private getRequests(endpoint: string): Observable<UserConnection[]> {
         return this.http.get(endpoint).pipe(
-            map((data: any) => data && data.requests && data.requests.map((data: any) => new UserRequest(data))),
+            map((data: any) => data && data.users && data.users.map((data: any) => new UserConnection(data))),
             catchError((err) => this.handleError(err))
         )
     }

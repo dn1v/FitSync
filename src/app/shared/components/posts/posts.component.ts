@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { PostsService } from 'src/app/core/services/posts/posts.service';
 import { Post } from 'src/models/post.model';
 
@@ -14,11 +14,20 @@ export class PostsComponent implements OnInit {
     @Input() generalPost: boolean = true
     modalOpen: boolean = false
     posts: Post[] = []
-    constructor(private route: ActivatedRoute, private postService: PostsService) { }
+    canCreatePost: boolean = true
+    constructor(
+        private authService: AuthService,
+        private postService: PostsService
+    ) { }
 
     ngOnInit(): void {
-        // console.log(this.generalPost)
-        // this.route.params.subscribe((params: Params) => this.groupId = params['id'])
+        if (
+            this.generalPost &&
+            this.authService.user.getValue().user?.__t === 'Athlete'
+        ) {
+            this.canCreatePost = false
+        }
+
         this.getPosts()
     }
 
@@ -39,10 +48,6 @@ export class PostsComponent implements OnInit {
     }
 
     getPosts(): void {
-        // console.log('Post')
-        // console.log('Post')
-        // console.log('Post')
-        // console.log('Post')
         if (this.generalPost) {
             this.postService.getGeneralPosts().subscribe({
                 next: (posts: Post[]) => {
@@ -55,7 +60,6 @@ export class PostsComponent implements OnInit {
     }
 
     onPostSub(): void {
-        console.log('REQUESTING POSTS!!!')
         this.getPosts()
     }
 
