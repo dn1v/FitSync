@@ -39,6 +39,13 @@ export class PostsService {
         )
     }
 
+    getGeneralPostsFromOhterUser(id: string): Observable<Post[]> {
+        return this.http.get(`${this.BASE_URL}/general/${id}`).pipe(
+            map((data: any) => data && data.posts && data.posts.map((post: any) => new Post(post))),
+            catchError((err) => this.handleError(err))
+        )
+    }
+
     private handleError(errRes: HttpErrorResponse) {
         return throwError(() => errRes)
     }

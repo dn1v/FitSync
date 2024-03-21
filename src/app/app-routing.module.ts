@@ -8,6 +8,7 @@ import { NetworkComponent } from './features/network/network.component';
 import { RequestsComponent } from './features/network/requests/requests.component';
 import { GroupsComponent } from './features/network/groups/groups.component';
 import { ConnectionsComponent } from './features/network/connections/connections.component';
+import { ConnectionDetailsComponent } from './features/network/connections/connection-details/connection-details.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
@@ -17,7 +18,8 @@ const routes: Routes = [
         path: 'network', component: NetworkComponent, canActivate: [AuthGuard], children: [
             { path: 'requests', component: RequestsComponent },
             { path: 'groups', component: GroupsComponent },
-            { path: 'connections', component: ConnectionsComponent }
+            { path: 'connections', component: ConnectionsComponent },
+            { path: 'connections/:id', component: ConnectionDetailsComponent}
         ]
     },
     { path: '', redirectTo: '', pathMatch: 'full' }

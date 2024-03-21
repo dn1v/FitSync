@@ -30,6 +30,7 @@ import { RequestFormComponent } from './features/network/requests/request-form/r
 import { RequestComponent } from './features/network/requests/request/request.component';
 import { RequestPopupComponent } from './features/network/requests/request-popup/request-popup.component';
 import { ConnectionComponent } from './features/network/connections/connection/connection.component';
+import { ConnectionDetailsComponent } from './features/network/connections/connection-details/connection-details.component';
 
 @NgModule({
     declarations: [
@@ -55,7 +56,8 @@ import { ConnectionComponent } from './features/network/connections/connection/c
         RequestFormComponent,
         RequestComponent,
         RequestPopupComponent,
-        ConnectionComponent
+        ConnectionComponent,
+        ConnectionDetailsComponent
     ],
     imports: [
         HttpClientModule,
