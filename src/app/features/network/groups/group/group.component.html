@@ -1,0 +1,7 @@
+<div class="group">
+    <ul class="group__info">
+        <li class="group__info-items">Name: {{ group.groupName }}</li>
+        <li class="group__info-items">Members: {{ group.members.length }}</li>
+    </ul>
+    <button class="group__btn btn" [routerLink]="[group._id]">More</button>
+</div>

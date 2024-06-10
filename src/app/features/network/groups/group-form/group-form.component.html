@@ -1,0 +1,28 @@
+<div class="group-form" >
+        <form [formGroup]="form" class="form center">
+            <div class="form__input-box">
+                <input formControlName="groupName" class="form__input" type="text" placeholder="Group name">
+                <p *ngIf="groupName?.touched && groupName?.errors?.['required']" class="form__error-message">Group name required.</p>
+            </div>
+            <div class="form__input-box">
+                <textarea formControlName="about" class="form__input" rows="10" placeholder="Write something about group..."></textarea>
+                <p *ngIf="about?.touched && about?.errors?.['required']" class="form__error-message">Content required.</p>
+            </div>
+            <div class="form__input-box flex">
+                <div class="checkbox-wrapper-7">
+                    <input formControlName="showMembers" class="tgl tgl-ios" id="cb2-7" type="checkbox"/>
+                    <label class="tgl-btn" for="cb2-7"></label>
+                </div>
+                <p>Display members</p>
+            </div>
+            <div class="form__input-box flex">
+                <div class="checkbox-wrapper-7">
+                    <input formControlName="showModerators" class="tgl tgl-ios" id="cb2-8" type="checkbox"/>
+                    <label class="tgl-btn" for="cb2-8"></label>
+                </div>
+                <p>Display moderators</p>
+            </div>
+            <button (click)="onDone()" [disabled]="form.invalid" class="btn">Done</button>
+        </form>
+        <!-- <app-pop-up></app-pop-up> -->
+</div>

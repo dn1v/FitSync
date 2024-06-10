@@ -1,3 +1,7 @@
 <section class="groups fade-in">
-    <p>groups works!</p>
+    <app-group-form></app-group-form>
+
+    <div class="groups__groups-container">
+        <app-group *ngFor="let group of groups" [group]="group"></app-group>
+    </div>
 </section>

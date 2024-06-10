@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Input, Output } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { PostsService } from 'src/app/core/services/posts/posts.service';
 import { SharedService } from 'src/app/core/services/shared/shared.service';
@@ -20,6 +19,7 @@ export class PostComponent implements OnInit {
     @Output() editEvent: EventEmitter<void> = new EventEmitter()
     @Output() deleteEvent: EventEmitter<void> = new EventEmitter()
     @Input() post: Post = new Post()
+    
     constructor(
         private sharedService: SharedService,
         private postService: PostsService,

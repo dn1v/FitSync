@@ -7,6 +7,8 @@ export class Post {
     title: string;
     content: string;
     url: string;
+    createdAt: Date;
+    updatedAt: Date;
 
     constructor(obj?: any) {
         this._id = obj && obj._id || ''
@@ -17,5 +19,7 @@ export class Post {
         this.title = obj && obj.title || ''
         this.content = obj && obj.content || ''
         this.url = obj && obj.url || ''
+        this.createdAt = obj  && obj.createdAt || new Date()
+        this.updatedAt = obj && obj.updatedAt || new Date()
     }
 }

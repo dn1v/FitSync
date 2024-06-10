@@ -31,6 +31,9 @@ import { RequestComponent } from './features/network/requests/request/request.co
 import { RequestPopupComponent } from './features/network/requests/request-popup/request-popup.component';
 import { ConnectionComponent } from './features/network/connections/connection/connection.component';
 import { ConnectionDetailsComponent } from './features/network/connections/connection-details/connection-details.component';
+import { GroupFormComponent } from './features/network/groups/group-form/group-form.component';
+import { GroupComponent } from './features/network/groups/group/group.component';
+import { GroupDetailsComponent } from './features/network/groups/group/group-details/group-details.component';
 
 @NgModule({
     declarations: [
@@ -57,7 +60,10 @@ import { ConnectionDetailsComponent } from './features/network/connections/conne
         RequestComponent,
         RequestPopupComponent,
         ConnectionComponent,
-        ConnectionDetailsComponent
+        ConnectionDetailsComponent,
+        GroupFormComponent,
+        GroupComponent,
+        GroupDetailsComponent
     ],
     imports: [
         HttpClientModule,

@@ -10,6 +10,8 @@ export class User {
     connections: string[]
     __t: string
 
+
+
     constructor(obj?: any) {
         console.log('User model:', obj)
         this._id = obj && obj._id || null

@@ -1,0 +1,9 @@
+.groups {
+    display: flex;
+    gap: 40px;
+}
+
+app-group-form {
+    max-width: 500px;
+    width: 100%;
+}
