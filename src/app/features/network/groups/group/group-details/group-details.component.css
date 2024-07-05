@@ -1,0 +1,64 @@
+.group-details {
+    display: flex;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .posts-container, .members-container {
+    padding: 20px;
+  }
+  
+  .posts-container {
+    flex: 2;
+    border-right: 1px solid #e0e0e0;
+  }
+  
+  .members-container {
+    flex: 1;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .post {
+    margin-bottom: 20px;
+  }
+  
+  .post h3 {
+    margin: 0 0 5px 0;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  ul li:last-child {
+    border-bottom: none;
+  }
+  

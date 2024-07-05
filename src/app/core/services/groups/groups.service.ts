@@ -26,6 +26,13 @@ export class GroupsService {
         )
     }
 
+    getGroup(_id: string): Observable<Group> {
+        return this.http.get(`${this.BASE_URL}/${_id}`).pipe(
+            map((data: any) => data && data.group && new Group(data.group)),
+            catchError((err) => this.handleError(err))
+        )
+    }
+
     private handleError(errRes: HttpErrorResponse) {
         return throwError(() => errRes)
     }
